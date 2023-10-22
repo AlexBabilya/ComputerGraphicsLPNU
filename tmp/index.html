@@ -1,0 +1,31 @@
+<form class="add_fractal_from" 
+    hx-post="show_fractal" 
+    hx-swap="outerHTML"
+    hx-target="this">
+    <div>
+        <label for="bm_max_iter">Max Iterations</label>
+        <input type="number" id="max_iter" name="max_iter" type="number" placeholder="256" value=256>
+    </div>
+    <div>
+        <input type="color" id="bm_color_selector" name="color" value="#000000"/>
+    </div>
+    <div>
+        <input type="radio" id="mandelbrot_rb" name="fractal_type" value="mandelbrot"checked/>
+        <label>Mandelbrot Fractal</label>
+    </div>
+    <div>
+        <label for="dt">Dt</label>
+        <input type="float" id="dt" name="dt" type="number" placeholder="0.1" value=0.1>
+    </div>
+    <div>
+        <label for="diffusion_coefficient">Diffusion Coefficient</label>
+        <input type="float" id="diffusion_coefficient" name="diffusion_coefficient" type="number" placeholder="0.1" value=0.1>
+    </div>
+    
+    <div>
+        <input type="radio" id="brownian_motion_rb" name="fractal_type" value="brownian_motion"/>
+        <label>Brownian Motion</label>
+    </div>
+    
+    <button type="submit">Submit</button>
+</form>

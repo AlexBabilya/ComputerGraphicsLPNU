@@ -1,0 +1,309 @@
+body {
+    background-color: #000000;
+}
+button {
+  background-color: #67E4C1;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  font-size: 32px;
+  padding: 5px 75px;
+  font-weight: bold;
+  cursor: pointer;
+}
+p {
+  color: #67E4C1
+}
+input {
+  border: none;
+  border-bottom: 2px solid#67E4C1 ;
+  font-size: 32px;
+  width: 100%;
+}
+.box {
+    width: 1980px;
+    height: 1080px;
+  }
+  
+  .box .window {
+    position: fixed;
+    width: 2000px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+  }
+  
+  .box .overlap-group {
+    position: relative;
+    width: 1988px;
+    height: 1088px;
+    left: -4px;
+    background-image: url(./img/rectangle-11.png);
+    background-size: 100% 100%;
+  }
+  
+  .box .ellipse {
+    top: 322px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 141px;
+    background-color: #d9d9d9;
+    border-radius: 16px;
+  }
+  
+  .box .mandelbrot-fractal {
+    position: absolute;
+    width: 606px;
+    height: 82px;
+    top: 127px;
+    left: 700px;
+  }
+  
+  .box .rectangle {
+    position: absolute;
+    width: 958px;
+    height: 600px;
+    top: 296px;
+    left: 910px;
+    background-color: #0b3d2f;
+    border-radius: 50px;
+  }
+  
+  .box .div {
+    top: 623px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 141px;
+    background-color: #d9d9d9;
+    border-radius: 16px;
+  }
+  
+  .box .text-wrapper {
+    position: absolute;
+    width: 314px;
+    top: 324px;
+    left: 141px;
+    font-family: "Ubuntu-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box .text-wrapper-2 {
+    position: absolute;
+    width: 362px;
+    top: 384px;
+    left: 141px;
+    font-family: "Ubuntu-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box .text-wrapper-3 {
+    width: 409px;
+    top: 685px;
+    position: absolute;
+    left: 200px;
+    font-family: "Ubuntu-Regular", Helvetica;
+    font-weight: 400;
+    color: #67E4C1;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .mandelbrot_rb {
+    position: absolute;
+    top: 470px;
+    left: 100px;
+    width: 120px;
+    height: 30px;
+    background-color: #67E4C1;
+    cursor: pointer;
+  }
+
+  .brownian_motion_rb {
+    position: absolute;
+    top: 685px;
+    left: 100px;
+    width: 120px;
+    height: 30px;
+    background-color: #67E4C1;
+    cursor: pointer;
+  }
+
+  .box .text-wrapper-4 {
+    width: 415px;
+    top: 473px;
+    position: absolute;
+    left: 200px;
+    font-family: "Ubuntu-Regular", Helvetica;
+    font-weight: 400;
+    color: #67E4C1;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box .text-wrapper-5 {
+    position: absolute;
+    width: 415px;
+    top: 750px;
+    left: 141px;
+    font-family: "Ubuntu-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box .text-wrapper-6 {
+    position: absolute;
+    width: 415px;
+    top: 538px;
+    left: 141px;
+    font-family: "Ubuntu-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box .text-wrapper-7 {
+    position: absolute;
+    width: 314px;
+    top: 605px;
+    left: 141px;
+    font-family: "Ubuntu-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  .box .rectangle-7 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 820px;
+    left: 572px;
+  }
+
+  .box .rectangle-2 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 384px;
+    left: 572px;
+  }
+  
+  .box .rectangle-3 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 537px;
+    left: 572px;
+  }
+  
+  .box .rectangle-4 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 605px;
+    left: 572px;
+  }
+  
+  .box .rectangle-5 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 324px;
+    left: 572px;
+  }
+  
+  .box .rectangle-6 {
+    position: absolute;
+    width: 225px;
+    height: 46px;
+    top: 750px;
+    left: 572px;
+  }
+  
+  .box .overlap {
+    position: absolute;
+    width: 317px;
+    height: 79px;
+    top: 826px;
+    left: 134px;
+    background-image: url(./img/rectangle-17.svg);
+    background-size: 100% 100%;
+  }
+  
+  .box .text-wrapper-8 {
+    position: absolute;
+    width: 79px;
+    top: 70px;
+    left: 210px;
+    font-family: "Ubuntu-Medium", Helvetica;
+    font-weight: 500;
+    color: #67E4C1;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .box .div-wrapper {
+    position: absolute;
+    width: 317px;
+    height: 79px;
+    top: 823px;
+    left: 502px;
+    background-image: url(./img/rectangle-45.svg);
+    background-size: 100% 100%;
+  }
+  
+  .box .text-wrapper-9 {
+    position: absolute;
+    width: 79px;
+    top: 820px;
+    left: 141px;
+    font-family: "Ubuntu-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .box .vector {
+    width: 61px;
+    left: 33px;
+    position: absolute;
+    height: 47px;
+    top: 45px;
+    color: #67E4C1;
+    font-size: 40px
+  }
+  
+  .box .img {
+    width: 59px;
+    left: 111px;
+    position: absolute;
+    height: 47px;
+    top: 45px;
+    color: #67E4C1;
+    font-size: 40px
+  }
+  

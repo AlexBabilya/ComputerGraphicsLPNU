@@ -1,0 +1,51 @@
+{% extends "_base.html" %}
+
+{% block title %} Computer Graphics LPNU {% endblock %}
+
+{% block main_content %}
+  <div class="box">
+    <div class="main-window">
+      <div class="overlap-group">
+        <p class="project-info">
+          <span class="header-info">Computer Graphics Semestral Project at LPNU by </span>
+          <span class="header-highlighted">Babilia Oleksandr PZ-31</span>
+        </p>
+        <p class="choose-function">
+          <span class="header-info">Choose </span>
+          <span class="header-highlighted">function</span>
+          <span class="header-info"> you would like to use</span>
+        </p>
+        <a href="fractals/">
+          <div class="fractal-overlap">
+            <div class="overlap-header">Fractals</div>
+            <article class="overlap-info">
+              <p>
+                1) Mandelbrot fractal f(z)=z*z+c.<br>Ability to generate different images, namely for:
+                <ul>
+                  <li>different color schemes,</li>
+                  <li>different scaling.</li>
+                </ul>
+              </p>
+            </article>
+            <div class="overlap-subtext">2) Brownian motion.</div>
+          </div>
+        </a>
+        <a href="color_shemas/">
+          <div class="color-schema-overlap">
+            <div class="overlap-header">Color Models</div>
+            <p class="overlap-info">RGB and HSV. Change the saturation of the green color.</p>
+          </div>
+        </a>
+        <a href="figure_movement/">
+          <div class="figure-movement-overlap">
+            <div class="overlap-header">Figure Movement</div>
+            <p class="overlap-info">
+              Implementation of the movement for a parallelogram entered by its vertices based on clockwise rotation
+              relative to the selected vertex with its simultaneous decrease by a factor of A.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
