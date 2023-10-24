@@ -1,23 +1,38 @@
 <form class="add_fractal_from" 
-    hx-post="show_fractal" 
-    hx-swap="outerHTML"
-    hx-target="this">
-          <div class="text-wrapper-9">DT:</div>
-          <div class="rectangle"></div>
-          <div class="text-wrapper">Max Iterations:</div>
-          <div class="text-wrapper-2">Enter Color Schema:</div>
-          <input type="radio" class="brownian_motion_rb" name="type" value="brownian_motion"/><label class="text-wrapper-3">Brownian Motion</label>
+  hx-post="show_fractal" 
+  hx-swap="outerHTML"
+  hx-target="this">
 
-          <input type="radio" class="mandelbrot_rb" name="type" value="mandelbrot"checked/><label class="text-wrapper-4">Mandelbrot</label>
-          <div class="text-wrapper-5">Diffusion Coefficient:</div>
-          
-          <div class="rectangle-7"><input type="float" id="dt" name="dt" type="number" placeholder="0.1" value=0.1></div>
-          <div class="text-wrapper-6">Enter Width:</div>
-          <div class="text-wrapper-7">Enter Height:</div>
-          <div class="rectangle-2"><input type="color" id="bm_color_selector" name="color" value="#ffffff"/></div>
-          <div class="rectangle-3"><input type="number" id="width" name="width" type="number" placeholder="2000" value=2000></div>
-          <div class="rectangle-4"><input type="number" id="height" name="height" type="number" placeholder="2000" value=2000></div>
-          <div class="rectangle-5"><input type="number" id="max_iter" name="max_iter" type="number" placeholder="256" value=256></div>
-          <div class="rectangle-6"><input type="float" id="diffusion_coefficient" name="diffusion_coefficient" type="number" placeholder="0.1" value=0.1></div>
-          <div class="overlap"><div class="text-wrapper-8"><button>Start</button></div></div>          
+  <label class="fractal-input-label" style="top: 30%">Max Iterations:</label>
+  <input class="fractal-input" style="top: 30%;" type="number" id="max_iter" name="max_iter" type="number" placeholder="256" value=256>
+
+  <label class="fractal-input-label" style="top: 35.56%;">Enter Color Schema:</label>
+  <input class="fractal-input" style="top: 36.2%; width: 11.55%;" type="color" id="bm_color_selector" name="color" value="#ffffff"/>
+
+  <input type="radio" class="mandelbrot_rb" name="type" value="mandelbrot"checked/>
+  <label class="fractal-input-label" style="top: 43.61%; left: 10.10%; color: #67E4C1;">Mandelbrot</label>
+  <label class="fractal-input-label" style="top: 49.81%">Enter Width:</label>
+  
+  <input class="fractal-input" style="top: 49.72%;" type="number" id="width" name="width" type="number" placeholder="2000" value=2000>
+
+  
+  <label class="fractal-input-label" style="top: 56.02%">Enter Height:</label>
+  <input class="fractal-input" style="top: 56.02%;" type="number" id="height" name="height" type="number" placeholder="2000" value=2000>
+
+  
+  <input type="radio" class="brownian_motion_rb" name="type" value="brownian_motion"/>
+  <label class="fractal-input-label" style="top: 63.43%; left: 10.10%; color: #67E4C1;">Brownian Motion</label>
+  
+  <label class="fractal-input-label" style="top: 69.44%">Diffusion Coefficient:</label>
+
+  <input class="fractal-input" style="top: 69.44%;" type="float" id="diffusion_coefficient" name="diffusion_coefficient" type="number" placeholder="0.1" value=0.1>
+
+  
+  <label class="fractal-input-label" style="top: 75.93%">DT:</label>
+  <input class="fractal-input" style="top: 75.93%;" type="float" id="dt" name="dt" type="number" placeholder="0.1" value=0.1>
+  
+  <div class="graph"></div>
+
+  <button class="form-button">Start</button>   
+      
 </form>

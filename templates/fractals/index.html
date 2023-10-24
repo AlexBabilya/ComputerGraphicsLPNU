@@ -3,16 +3,18 @@
 {% block title %} Fractals {% endblock title %}
 
 {% block main_content %}        
-    <div class="fbox">
-        <div class="window">
-            <div class="overlap-group">
-                <p class="mandelbrot-fractal" /> Mandelbrot Fractal and Brownian Motion. V-I2 </p>
-
-                {% include 'fractals/partials/add_form.html'  %}
-               
-                <a href="/"><i class="fa fa-home vector" aria-hidden="true"></i></a>
-                <a href="/fractals/help"><i class="fa fa-question img" aria-hidden="true"></i></a>
-            </div>
-        </div>
+  <div class="box">
+    <div class="main-window">
+      <div class="overlap-group">
+        <p class="project-info">
+          <span class="header-info">Computer Graphics Mandelbrot Fractal and Brownian Motion. </span>
+          <span class="header-highlighted">V-I2 </span>
+        </p>
+        {% include 'fractals/partials/add_form.html'  %}
+        
+        <a href="/"><i class="fa fa-home fa-3x home-icon" aria-hidden="true"></i></a>
+        <a href="/fractals/help"><i class="fa fa-question fa-3x help-icon" aria-hidden="true"></i></a>
+      </div>
     </div>
+  </div>
 {% endblock %}

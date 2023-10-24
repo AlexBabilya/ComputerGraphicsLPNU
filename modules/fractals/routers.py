@@ -3,8 +3,6 @@ from fastapi import Request, APIRouter, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-import concurrent.futures
-
 from .mandelbrot import Mandelbrot
 from .brownian_motion import BrownianMotion
 
