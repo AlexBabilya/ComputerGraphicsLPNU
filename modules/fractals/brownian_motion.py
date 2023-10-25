@@ -4,17 +4,22 @@ import matplotlib.pyplot as plt
 
 class BrownianMotion():
     def __init__(self, num_steps: int, color: str,
-                 dt: float, diffusion_coefficient: float) -> None:
+                 dt: int, diffusion_coefficient: int) -> None:
         self.num_steps = num_steps
-        self.dt = dt
-        self.diffusion_coefficient = diffusion_coefficient
-        self.timesteps = np.arange(0, self.num_steps) * self.dt
+        self.dt = dt / 10
+        # This parameter represents the time step size.
+        # It determines the intervals at which
+        # the position of the particle is updated in the simulation.
+        self.diffusion_coefficient = diffusion_coefficient / 10
+        # This parameter represents the diffusion coefficient,
+        # which is a measure of how particles spread out over time.
         self.positions_x = np.zeros(self.num_steps)
         self.positions_y = np.zeros(num_steps)
         self.color = color
 
     def __brownian_motion(self) -> None:
         for i in range(1, self.num_steps):
+            # Calculate the variance of the normal distribution
             displacement_x = np.random.normal(
                 0, np.sqrt(2 * self.diffusion_coefficient * self.dt))
             displacement_y = np.random.normal(

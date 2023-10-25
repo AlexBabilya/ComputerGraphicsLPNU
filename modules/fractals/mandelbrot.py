@@ -11,7 +11,7 @@ class Mandelbrot:
         self.ymin, self.ymax = -1.5, 1.5
         self.color = color
 
-    def __mandelbrot(self, c: int) -> int:
+    def __mandelbrot(self, c: complex) -> int:
         z = 0
         n = 0
         while abs(z) <= 2 and n < self.max_iter:
@@ -23,6 +23,7 @@ class Mandelbrot:
         img = np.zeros((self.height, self.width, 3), dtype=np.uint8)
         for x in range(self.width):
             for y in range(self.height):
+                # linear interpolation formula
                 real = (self.xmin + (self.xmax - self.xmin)
                         * x / (self.width - 1))
                 imag = (self.ymin + (self.ymax - self.ymin)

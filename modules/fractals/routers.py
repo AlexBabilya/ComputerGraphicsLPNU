@@ -27,18 +27,18 @@ async def help_fractals(request: Request):
 async def show_fractal(request: Request,
                        max_iter: int = Form(...),
                        color: str = Form(...),
-                       dt: float = Form(...),
-                       diffusion_coefficient: float = Form(...),
+                       dt: int = Form(...),
+                       diffusion_coefficient: int = Form(...),
                        type: str = Form(...),
                        width: int = Form(...),
                        height: int = Form(...)):
 
-    fractal = Mandelbrot(int(max_iter),
+    fractal = Mandelbrot(max_iter,
                          width, height,
                          webcolors.hex_to_rgb(color))
 
     if type == 'brownian_motion':
-        fractal = BrownianMotion(int(max_iter),
+        fractal = BrownianMotion(max_iter,
                                  color,
                                  dt,
                                  diffusion_coefficient)
