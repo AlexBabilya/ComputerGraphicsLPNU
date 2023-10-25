@@ -33,14 +33,14 @@ class BrownianMotion():
         plt.figure(figsize=(8, 6))
         plt.plot(self.positions_x,
                  self.positions_y,
-                 label='2D Brownian Motion',
+                 label='Brownian Motion',
                  color=self.color)
-        plt.title('2D Brownian Motion')
+        plt.title('Brownian Motion')
         plt.xlabel('X Position')
         plt.ylabel('Y Position')
         plt.legend()
         plt.grid(True)
         manager = plt.get_current_fig_manager()
-        manager.window.wm_geometry("+900+400")
+        manager.window.wm_geometry("+880+380")
         manager.resize(975, 550)
         plt.show()

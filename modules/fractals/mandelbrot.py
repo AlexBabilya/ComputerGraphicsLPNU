@@ -40,6 +40,6 @@ class Mandelbrot:
         plt.xlabel('Real')
         plt.ylabel('Imaginary')
         manager = plt.get_current_fig_manager()
-        manager.window.wm_geometry("+900+400")
+        manager.window.wm_geometry("+880+380")
         manager.resize(975, 550)
         plt.show()
