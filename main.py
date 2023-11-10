@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from modules.fractals.routers import fractal_router
+from modules.color_schemas.routers import color_schemas_router
 
 app = FastAPI()
 
@@ -16,3 +17,4 @@ async def root_page(request: Request):
     return templates.TemplateResponse('home/index.html', {"request": request})
 
 app.include_router(fractal_router, prefix="/fractals")
+app.include_router(color_schemas_router, prefix="/color_schemas")

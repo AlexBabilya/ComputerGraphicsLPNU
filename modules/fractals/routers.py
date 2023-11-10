@@ -12,13 +12,13 @@ templates = Jinja2Templates(directory="./templates")
 
 
 @fractal_router.get("/", response_class=HTMLResponse)
-async def fractals(request: Request):
+async def index(request: Request):
     return templates.TemplateResponse('fractals/index.html',
                                       {"request": request})
 
 
 @fractal_router.get("/help", response_class=HTMLResponse)
-async def help_fractals(request: Request):
+async def help_info(request: Request):
     return templates.TemplateResponse('fractals/help.html',
                                       {"request": request})
 

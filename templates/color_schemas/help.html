@@ -1,0 +1,35 @@
+
+{% extends "_base.html" %}
+
+{% block title %} Fractals Help{% endblock title %}
+
+{% block main_content %}        
+  <div class="box">
+    <div class="main-window">
+      <div class="overlap-group">
+        <a href="/"><i class="fa fa-home fa-3x home-icon" aria-hidden="true"></i></a>
+        <a href="/color_schemas"><i class="fa fa-angle-left fa-3x help-icon" aria-hidden="true"></i></a>
+        <div class="img-holder" style="top: 25%;"><img class="mandelbrot-img" src="/static/img/RGB.png" /></div>
+        <div class="help-header" style="top: 17%;">RGB Color Space</div>
+        <p class="help-text" style="top: 20%;">
+          <span class="header-info">
+            <span class="header-highlighted">RGB</span> stands for Red, Green, and Blue, which are the primary colors of light used to create colors on electronic displays like monitors and screens.
+            In the <span class="header-highlighted">RGB</span> color space, colors are represented as combinations of varying intensities of red, green, and blue. Each color channel typically ranges from 0 (no intensity) to 255 (maximum intensity).
+            For example, the color green is created by setting the green channel to a high intensity (e.g., 255) and the red and blue channels to low intensities (e.g., 0).
+          </span>
+        </p>
+        <div class="img-holder" style="top: 70%;"><img class="brownian-img" src="/static/img/HSV.png" /></div>
+        <div class="help-header" style="top: 65%;">HSV Color Space</div>
+        <p class="help-text" style="top: 68%;">
+          <span class="header-info">
+            <span class="header-highlighted">HSV</span> stands for Hue, Saturation, and Value. It is an alternative representation of colors that separates the color information (hue), the vividness or intensity of the color (saturation), and the brightness (value).
+            <span class="header-highlighted">Hue (H)</span> represents the actual color itself, and it is measured in degrees around a color wheel (0° for red, 120° for green, 240° for blue, and everything in between).
+            <span class="header-highlighted">Saturation (S)</span> measures the purity or vividness of a color. A saturation value of 0 represents a shade of gray, while higher values represent more vivid colors.
+            <span class="header-highlighted">Value (V)</span> represents the brightness of the color. A value of 0 is black, and higher values are progressively brighter.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
