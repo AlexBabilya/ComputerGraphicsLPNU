@@ -250,9 +250,15 @@ body {
 }
 
 .fractal-file-input {
-  font-size: 40px;
+  font-size: 25px;
   position: absolute;
   left: 28.89%; 
-  top: 36.2%; 
-  
+  top: 37%; 
+}
+
+.select-input {
+  font-size: 25px;
+  position: absolute;
+  left: 28.89%; 
+  top: 45%
 }

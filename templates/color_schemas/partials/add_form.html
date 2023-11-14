@@ -6,11 +6,17 @@
   >
 
   <label class="fractal-input-label" style="top: 30%">Choose Coef:</label>
-  <input class="fractal-input" style="top: 30%;" type="range" id="coef" name="coef" min="0" max="100">
+  <input class="fractal-input" style="top: 29%;" type="range" id="coef" name="coef" min="0" max="100">
 
-  <label class="fractal-input-label" style="top: 35.56%;">Upload File:</label>
+  <label class="fractal-input-label" style="top: 37.5%;">Upload File:</label>
   <input class="fractal-file-input" type="file" id="file" name="file"/>
 
+  <label class="fractal-input-label" style="top: 45%;">Slect Option:</label>
+  <select class="select-input" name="option">
+    <option value="1">Change Green Stauration</option>
+    <option value="2">Move From RGB To HSV</option>
+    <option value="3">Move From HSV To RGB</option>
+  </select>
 
   <div class="graph">
     <div class="hidden" id="loading-icon">
