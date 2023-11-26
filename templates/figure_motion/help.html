@@ -1,0 +1,43 @@
+
+{% extends "_base.html" %}
+
+{% block title %} Fractals Help{% endblock title %}
+
+{% block main_content %}        
+  <div class="box">
+    <div class="main-window">
+      <div class="overlap-group">
+        <a href="/"><i class="fa fa-home fa-3x home-icon" aria-hidden="true"></i></a>
+        <a href="/figure_motion"><i class="fa fa-angle-left fa-3x help-icon" aria-hidden="true"></i></a>
+        <div class="help-header" style="top: 17%;">Rotation and Scaling Transformation of a Parallelogram</div>
+        <p class="help-text" style="top: 20%; width: 90%;">
+          <span class="header-info">
+          <span class="header-highlighted">Rotation</span> is a fundamental geometric transformation that involves changing the orientation of an object around a specified point (the center of rotation).
+          <span class="header-highlighted">Clockwise rotation</span> refers to the rotation in the direction of a clock's hands, i.e., a decrease in the angle between a reference axis and the object.
+          In 2D space, a <span class="header-highlighted">clockwise rotation</span> of a point (x, y) by an angle θ can be achieved using the following equations:
+             x' = x * cos(θ) - y * sin(θ)
+             y' = x * sin(θ) + y * cos(θ)
+           Where (x', y') are the new coordinates of the point after <span class="header-highlighted">rotation</span>
+          <span class="header-highlighted">Scaling</span> involves changing the size of an object by multiplying its coordinates by a scale factor.
+          <span class="header-highlighted">Scaling</span> can be uniform (scaling by the same factor in both dimensions) or non-uniform (scaling by different factors in each dimension).
+          In the case of uniform scaling by a factor A, the new coordinates (x', y') of a point (x, y) are given by:
+             x' = A * x
+             y' = A * y
+          To perform a <span class="header-highlighted">rotation</span> and <span class="header-highlighted">scaling</span> simultaneously, you can apply the <span class="header-highlighted">scaling</span> operation after the rotation.
+          For a <span class="header-highlighted">clockwise rotation</span> followed by <span class="header-highlighted">scaling</span> by a factor A, you can apply the <span class="header-highlighted">rotation</span> transformation first and then multiply the coordinates by A.
+          </span>
+        </p>
+        <div class="help-header" style="top: 62%;">Transformation of a Parallelogram</div>
+        <p class="help-text" style="top: 65%; width: 90%;">
+          <span class="header-info">
+            A parallelogram is a quadrilateral with opposite sides that are parallel.
+            To transform a parallelogram based on a selected vertex, you can translate the parallelogram so that the selected vertex coincides with the origin.
+            Apply the rotation and scaling transformations to each vertex of the parallelogram relative to the origin.
+            After transformation, translate the parallelogram back to its original position by adding the coordinates of the selected vertex.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
