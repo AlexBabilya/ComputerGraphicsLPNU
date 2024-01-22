@@ -14,13 +14,18 @@ templates = Jinja2Templates(directory="./templates")
 
 @color_schemas_router.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse('color_schemas/index.html',
+    return templates.TemplateResponse('color_schemas/lab3.html',
                                       {"request": request})
 
 
 @color_schemas_router.get("/help", response_class=HTMLResponse)
 async def help_info(request: Request):
     return templates.TemplateResponse('color_schemas/help.html',
+                                      {"request": request})
+
+@color_schemas_router.get("/tmp", response_class=HTMLResponse)
+async def tmp_info(request: Request):
+    return templates.TemplateResponse('color_schemas/index.html',
                                       {"request": request})
 
 

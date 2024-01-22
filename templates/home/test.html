@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .question-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #question {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #2980b9;
+        }
+
+        .result-container {
+            margin-top: 20px;
+        }
+
+        .correct {
+            color: #27ae60;
+        }
+
+        .incorrect {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fractal Quiz</h1>
+
+<div class="question-container" id="questionContainer">
+    <p id="question">What type of fractal is known for its triangular pattern and self-replication?</p>
+    <div class="options-container">
+        <button class="option" onclick="checkAnswer('Sierpinski')">Sierpinski Triangle</button>
+        <button class="option" onclick="checkAnswer('Mandelbrot')">Mandelbrot Set</button>
+        <button class="option" onclick="checkAnswer('Koch')">Koch Snowflake</button>
+    </div>
+</div>
+
+<div class="result-container" id="resultContainer"></div>
+
+<script>
+    function checkAnswer(selectedFractal) {
+        const correctFractal = 'Sierpinski';
+        const resultContainer = document.getElementById('resultContainer');
+
+        if (selectedFractal === correctFractal) {
+            resultContainer.innerHTML = '<p class="correct">Correct! The Sierpinski Triangle is known for its triangular pattern and self-replication.</p>';
+        } else {
+            resultContainer.innerHTML = '<p class="incorrect">Incorrect. Try again!</p>';
+        }
+    }
+</script>
+
+<div class="question-container" id="questionContainer2">
+    <p id="question2">Which fractal is associated with a set of complex numbers and is often visualized as a colorful, infinitely complex shape?</p>
+    <div class="options-container">
+        <button class="option" onclick="checkAnswer2('Sierpinski')">Sierpinski Triangle</button>
+        <button class="option" onclick="checkAnswer2('Mandelbrot')">Mandelbrot Set</button>
+        <button class="option" onclick="checkAnswer2('Koch')">Koch Snowflake</button>
+    </div>
+</div>
+
+<div class="result-container" id="resultContainer2"></div>
+
+<script>
+    function checkAnswer2(selectedFractal) {
+        const correctFractal = 'Mandelbrot';
+        const resultContainer = document.getElementById('resultContainer2');
+
+        if (selectedFractal === correctFractal) {
+            resultContainer.innerHTML = '<p class="correct">Correct! The Mandelbrot Set is associated with a set of complex numbers and is often visualized as a colorful, infinitely complex shape.</p>';
+        } else {
+            resultContainer.innerHTML = '<p class="incorrect">Incorrect. Try again!</p>';
+        }
+    }
+</script>
+
+<div class="question-container" id="questionContainer3">
+    <p id="question3">Which fractal is known for its self-repeating, infinite, and intricate geometric pattern involving triangles?</p>
+    <div class="options-container">
+        <button class="option" onclick="checkAnswer3('Sierpinski')">Sierpinski Triangle</button>
+        <button class="option" onclick="checkAnswer3('Mandelbrot')">Mandelbrot Set</button>
+        <button class="option" onclick="checkAnswer3('Koch')">Koch Snowflake</button>
+    </div>
+</div>
+
+<div class="result-container" id="resultContainer3"></div>
+
+<script>
+    function checkAnswer3(selectedFractal) {
+        const correctFractal = 'Koch';
+        const resultContainer = document.getElementById('resultContainer3');
+
+        if (selectedFractal === correctFractal) {
+            resultContainer.innerHTML = '<p class="correct">Correct! The Koch Snowflake is known for its self-repeating, infinite, and intricate geometric pattern involving triangles.</p>';
+        } else {
+            resultContainer.innerHTML = '<p class="incorrect">Incorrect. Try again!</p>';
+        }
+    }
+</script>
+
+</body>
+</html>

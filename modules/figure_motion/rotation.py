@@ -2,12 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 from matplotlib.animation import FuncAnimation
-
-
-def rotate_point(x, y, cx, cy, theta):
-    x_rot = cx + (x - cx) * np.cos(theta) + (y - cy) * np.sin(theta)
-    y_rot = cy - (x - cx) * np.sin(theta) + (y - cy) * np.cos(theta)
-    return x_rot, y_rot
+from matplotlib.transforms import Affine2D
+from matplotlib.widgets import Button
 
 
 def find_fourth_point(points):
@@ -17,41 +13,88 @@ def find_fourth_point(points):
     return p4
 
 
-def update_animation(frame, ax, points, vertex, scale):
-    ax.clear()
-    ax.grid(True)
+def apply_affine_transform(matrix, points):
+    transformed_points = []
+    for x, y in points:
+        point = np.array([[x], [y], [1]])  # Convert to column vector
+        """
+        x
+        y
+        1
+        """
+        transformed_point = matrix @ point
+        transformed_points.append((transformed_point[0, 0],
+                                   transformed_point[1, 0]))
+    return transformed_points
 
-    theta = np.radians(frame)
+
+def update_animation(frame, poly, points, vertex, scale):
+    theta = np.radians(-frame)
     vertices = np.array(points)
     rotation_vertex = vertices[vertex]
 
     scale_factor = 1 - frame * scale / 360.0
 
-    # Rotate all vertices except the fixed vertex
-    rotated_vertices = np.array([rotate_point(v[0], v[1], rotation_vertex[0],
-                                              rotation_vertex[1], theta)
-                                 if i != vertex else v for i,
-                                 v in enumerate(vertices)])
-    print(rotated_vertices)
-    # Scale the rotated vertices
-    scaled_rotated_vertices = rotated_vertices * scale_factor
+    transform_matrix = Affine2D()
+    """
+    1 0 0
+    0 1 0
+    0 0 1
+    """
+    transform_matrix.rotate_deg_around(rotation_vertex[0], rotation_vertex[1],
+                                       np.degrees(theta))
+    """
+    cos(theta)      -sin(theta)    x - xcos(theta) + ysin(theta)
+    sin(theta)       cos(theta)    y - ycos(theta) - xsin(theta)
+    0                0             1
+    """
 
-    parallelogram = Polygon(scaled_rotated_vertices, closed=True,
-                            edgecolor='b')
-    ax.add_patch(parallelogram)
+    transform_matrix.scale(scale_factor, scale_factor)
+    """
+    x * scale_factor         0              0
+        0              y * scale_factor     0
+        0                    0              1
+    """
+    # Apply affine transformation to all vertices
+    transformed_vertices = apply_affine_transform(transform_matrix.
+                                                  get_matrix(), vertices)
 
-    ax.set_xlim(-2, 4)
-    ax.set_ylim(-2, 2)
-    ax.set_aspect('equal', adjustable='box')
+    # Update the xy data of the existing Polygon
+    poly.set_xy(transformed_vertices)
+
+
+def toggle_animation(event, anim):
+    global running
+    if running:
+        anim.event_source.stop()
+    else:
+        anim.event_source.start()
+    running = not running
 
 
 def animate_rotation(points, vertex, scale):
+    global running
+    running = True
     fig, ax = plt.subplots()
+    ax.grid(True)
     points.append(find_fourth_point(points))
-    anm = FuncAnimation(fig, lambda frame: update_animation(frame, ax, points,
-                                                            vertex, scale),
-                        frames=np.arange(0, 360, 1), interval=50)
-    manager = plt.get_current_fig_manager()
-    manager.window.wm_geometry("+880+380")
-    manager.resize(975, 550)
+
+    # Create an initial Polygon
+    poly = Polygon(points, closed=True, edgecolor='b')
+    ax.add_patch(poly)
+
+    anim = FuncAnimation(fig, update_animation,
+                         fargs=(poly, points, vertex, scale),
+                         frames=np.arange(0, 360, 1), interval=50)
+
+    # Add a button to start/stop the animation
+    ax_button = plt.axes([0.81, 0.01, 0.1, 0.04])
+    button = Button(ax_button, 'Start/Stop', color='lightgoldenrodyellow',
+                    hovercolor='0.975')
+    button.on_clicked(lambda event: toggle_animation(event, anim))
+
+    # Adjust the limits to zoom out
+    ax.set_xlim(-3, 5)
+    ax.set_ylim(-3, 3)
+
     plt.show()

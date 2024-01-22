@@ -4,20 +4,20 @@
   hx-target="this">
 
   <label class="fractal-input-label" style="top: 30%">Max Iterations:</label>
-  <input class="fractal-input" style="top: 30%;" type="number" id="max_iter" name="max_iter" type="number" placeholder="256" value=256>
+  <input class="fractal-input" min="0" max = "2000"style="top: 30%;" type="number" id="max_iter" name="max_iter" type="number" placeholder="256" value=256>
 
   <label class="fractal-input-label" style="top: 35.56%;">Enter Color Schema:</label>
   <input class="fractal-input" style="top: 36.2%; width: 11.55%;" type="color" id="bm_color_selector" name="color" value="#ffffff"/>
 
   <input type="radio" class="mandelbrot_rb" name="type" value="mandelbrot"checked/>
   <label class="fractal-input-label" style="top: 43.61%; left: 10.10%; color: #67E4C1;">Mandelbrot</label>
-  <label class="fractal-input-label" style="top: 49.81%">Enter Width:</label>
+  <label class="fractal-input-label"  style="top: 49.81%">Enter Width:</label>
   
-  <input class="fractal-input" style="top: 49.72%;" type="number" id="width" name="width" type="number" placeholder="200" value=200>
+  <input class="fractal-input" min="0" max = "500"style="top: 49.72%;" type="number" id="width" name="width" type="number" placeholder="200" value=200>
 
   
   <label class="fractal-input-label" style="top: 56.02%">Enter Height:</label>
-  <input class="fractal-input" style="top: 56.02%;" type="number" id="height" name="height" type="number" placeholder="200" value=200>
+  <input class="fractal-input" min="0" max = "500" style="top: 56.02%;" type="number" id="height" name="height" type="number" placeholder="200" value=200>
 
   
   <input type="radio" class="brownian_motion_rb" name="type" value="brownian_motion"/>
@@ -25,11 +25,11 @@
   
   <label class="fractal-input-label" style="top: 69.44%">Diffusion Coefficient:</label>
 
-  <input class="fractal-input" style="top: 69.44%;" type="number" id="diffusion_coefficient" name="diffusion_coefficient" type="number" placeholder="1" value=1>
+  <input class="fractal-input" max = "5" min="0"style="top: 69.44%;" type="number" id="diffusion_coefficient" name="diffusion_coefficient" type="number" placeholder="1" value=1>
 
   
   <label class="fractal-input-label" style="top: 75.93%">DT:</label>
-  <input class="fractal-input" style="top: 75.93%;" type="number" id="dt" name="dt" type="number" placeholder="1" value=1>
+  <input class="fractal-input" max = "5" min="0" style="top: 75.93%;" type="number" id="dt" name="dt" type="number" placeholder="1" value=1>
   
   <div class="graph">
     <div class="hidden" id="loading-icon">

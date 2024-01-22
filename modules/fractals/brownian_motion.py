@@ -40,7 +40,5 @@ class BrownianMotion():
         plt.ylabel('Y Position')
         plt.legend()
         plt.grid(True)
-        manager = plt.get_current_fig_manager()
-        manager.window.wm_geometry("+880+380")
-        manager.resize(975, 550)
+
         plt.show()

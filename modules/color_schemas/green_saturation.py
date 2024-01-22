@@ -32,7 +32,7 @@ def change_green_saturation(image_path, coefficient):
     axes[1].set_title(f"Modified Image (Green Saturation: {coefficient}%)")
 
     # Show the plot
-    manager = plt.get_current_fig_manager()
-    manager.window.wm_geometry("+880+380")
-    manager.resize(975, 550)
+    # manager = plt.get_current_fig_manager()
+    # manager.window.wm_geometry("+880+380")
+    # manager.resize(975, 550)
     plt.show()

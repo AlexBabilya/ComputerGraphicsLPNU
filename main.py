@@ -18,6 +18,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def root_page(request: Request):
     return templates.TemplateResponse('home/index.html', {"request": request})
 
+@app.get("/test", response_class=HTMLResponse)
+async def test(request: Request):
+    return templates.TemplateResponse('home/test.html', {"request": request})
+
 app.include_router(fractal_router, prefix="/fractals")
 app.include_router(color_schemas_router, prefix="/color_schemas")
 app.include_router(figure_motion_router, prefix="/figure_motion")
